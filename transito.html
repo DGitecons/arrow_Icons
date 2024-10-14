@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camada de Tráfego - ITECons</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #010d25;
+        }
+
+        #map {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap"
+      defer>
+    </script>
+    <script>
+        // Função de inicialização do mapa
+        function initMap() {
+            const coimbraLocation = { lat: 40.200775, lng: -8.430903 };
+            const iteconsLocation = { lat: 40.1902, lng: -8.4133 };
+
+            // Cria um novo mapa
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: coimbraLocation,
+            });
+
+            // Adiciona a camada de tráfego
+            const trafficLayer = new google.maps.TrafficLayer();
+            trafficLayer.setMap(map);
+
+            // Adiciona um marcador na localização do ITECons
+            new google.maps.Marker({
+                position: iteconsLocation,
+                map: map,
+                title: "ITECons",
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>
