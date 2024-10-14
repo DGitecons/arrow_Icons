@@ -19,7 +19,7 @@ options.add_argument('--window-size=800,600')  # Define o tamanho da janela para
 driver = webdriver.Chrome(service=ChromeService(CHROMEDRIVER_PATH), options=options)
 
 # Caminho para o repositório
-repo_path = r'C:\Users\diogo.gerardo\Desktop\CODE\NEWS\arrow_Icons-1'
+repo_path = r'C:\Users\diogo.gerardo\Desktop\CODE\NEWS\Git\arrow_Icons'
 image_filename = os.path.join(repo_path, "mapa_com_transito.png")  # Define o caminho da imagem no repositório
 
 try:
@@ -30,7 +30,7 @@ try:
     subprocess.run(["git", "pull", "origin", "main"], check=True)
 
     # URL do arquivo HTML local com o mapa
-    html_file = r'file:///C:/Users/diogo.gerardo/Desktop/CODE/NEWS/transito.html'
+    html_file = r'file:///C:/Users/diogo.gerardo/Desktop/CODE/NEWS/Git/arrow_Icons/transito.html'
 
     # Acessa o arquivo HTML com o mapa e a camada de trânsito
     driver.get(html_file)
